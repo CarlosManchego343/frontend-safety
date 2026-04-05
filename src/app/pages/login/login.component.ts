@@ -12,19 +12,24 @@ import { CommonModule } from '@angular/common';
   styleUrl: './login.component.css'
 })
 export class LoginComponent {
-  correo = '';
-  contrasenia = '';
+  email = '';
+  password = '';
   error = '';
 
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(private authService: AuthService, private router: Router) { }
 
   login() {
-    this.authService.login(this.correo, this.contrasenia).subscribe({
-      next: data => {
-        this.authService.guardarToken(data.token);
+    this.authService.login(this.email, this.password).subscribe({
+      next: token => {
+        console.log('TOKEN:', token);
+
+        this.authService.guardarToken(token); // 👈 ahora es string directo
         this.router.navigate(['/dashboard']);
       },
-      error: err => this.error = 'Usuario o contraseña incorrectos'
+      error: err => {
+        console.error('ERROR COMPLETO:', err);
+        this.error = 'Usuario o contraseña incorrectos';
+      }
     });
   }
 }

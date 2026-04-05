@@ -2,7 +2,7 @@
   <h2 class="mb-4 text-center">Iniciar Sesión</h2>
   <div class="alert alert-danger" *ngIf="error">{{ error }}</div>
 
-  <input type="email" [(ngModel)]="correo" placeholder="Correo" class="form-control mb-3">
-  <input type="password" [(ngModel)]="contrasenia" placeholder="Contraseña" class="form-control mb-3">
+  <input type="email" [(ngModel)]="email" placeholder="Correo" class="form-control mb-3">
+  <input type="password" [(ngModel)]="password" placeholder="Contraseña" class="form-control mb-3">
   <button class="btn btn-primary w-100" (click)="login()">Ingresar</button>
 </div>
