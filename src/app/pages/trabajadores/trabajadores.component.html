@@ -1,0 +1,19 @@
+<div class="container mt-4">
+  <h2>Trabajadores</h2>
+  <table class="table table-bordered">
+    <thead class="table-dark">
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Cargo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let t of trabajadores">
+        <td>{{ t.id }}</td>
+        <td>{{ t.nombre }}</td>
+        <td>{{ t.cargo }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,19 @@
+<div class="container mt-4">
+  <h2>Capacitaciones</h2>
+  <table class="table table-bordered">
+    <thead class="table-dark">
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Fecha</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let c of capacitaciones">
+        <td>{{ c.id }}</td>
+        <td>{{ c.nombre }}</td>
+        <td>{{ c.fecha }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
