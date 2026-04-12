@@ -1,8 +1,63 @@
-<div class="container mt-4">
-  <h2>Bienvenido al Sistema SG-SST</h2>
-  <div class="d-flex gap-3 mt-3">
-    <a class="btn btn-info" routerLink="/trabajadores">Trabajadores</a>
-    <a class="btn btn-success" routerLink="/capacitaciones">Capacitaciones</a>
-    <a class="btn btn-dark" routerLink="/reportes">Reportes</a>
-  </div>
+<div class="layout">
+
+  <!-- Sidebar fijo -->
+  <aside class="sidebar">
+    <div class="logo-container text-center">
+      <img src="logo-wattle.png" class="logo">
+    </div>
+
+    <nav class="menu">
+
+      <!-- RESPONSABLE -->
+      <ng-container *ngIf="rol === 'RESPONSABLE'">
+        <a routerLink="/riesgos">⚠️ Monitorear riesgos</a>
+        <a routerLink="/capacitaciones">📚 Capacitaciones</a>
+        <a routerLink="/reportes">📊 Reportes</a>
+      </ng-container>
+
+      <!-- TRABAJADOR -->
+      <ng-container *ngIf="rol === 'TRABAJADOR'">
+        <a routerLink="/actividades">📝 Registrar actividad</a>
+      </ng-container>
+
+    </nav>
+
+    <div class="logout-container">
+      <button class="btn logout-btn w-100" (click)="logout()">
+        Cerrar sesión
+      </button>
+    </div>
+  </aside>
+
+  <!-- Contenido principal -->
+  <main class="main-content">
+
+    <!-- Imagen superior -->
+    <div class="hero">
+      <div class="hero-overlay"></div>
+      <img src="imagen_background_1.png" class="bg-img">
+    </div>
+
+    <!-- Tarjeta flotante -->
+    <div class="welcome-card">
+
+      <h1>Bienvenido al Sistema SG-SST</h1>
+
+      <p>
+        El Sistema de Gestión de Seguridad y Salud en el Trabajo (SG-SST)
+        es un conjunto de políticas, procesos y actividades orientadas a
+        prevenir riesgos laborales, proteger la salud de los trabajadores
+        y mejorar continuamente las condiciones del entorno laboral.
+      </p>
+
+      <p>
+        Este sistema permite gestionar capacitaciones, monitorear riesgos
+        y generar reportes que contribuyen al cumplimiento normativo y al
+        bienestar organizacional.
+      </p>
+
+    </div>
+
+  </main>
+
 </div>

@@ -8,7 +8,7 @@ import { ReportesComponent } from './pages/reportes/reportes.component';
 import { AuthGuard } from './core/guards/auth.guard';
 
 const routes: Routes = [
-  { path: '', component: LoginComponent },
+  { path: '', component: LoginComponent }, 
   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
   { path: 'capacitaciones', component: CapacitacionesComponent, canActivate: [AuthGuard] },
   { path: 'trabajadores', component: TrabajadoresComponent, canActivate: [AuthGuard] },

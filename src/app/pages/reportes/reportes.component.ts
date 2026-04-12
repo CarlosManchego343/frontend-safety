@@ -1,26 +1,31 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ReportesService } from '../../core/services/reportes.service';
-import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-reportes',
   standalone: true,
-  imports: [FormsModule, CommonModule],
+  imports: [CommonModule],
   templateUrl: './reportes.component.html',
   styleUrls: ['./reportes.component.css']
 })
-export class ReportesComponent {
-  constructor(private service: ReportesService) { }
+export class ReportesComponent implements OnInit {
 
-  descargarPDF() {
-    this.service.descargarPdf().subscribe(blob => {
-      const url = window.URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = `reporte.pdf`;
-      a.click();
-      window.URL.revokeObjectURL(url);
+  actividades: any[] = [];
+
+  constructor(
+    private service: ReportesService,
+    private router: Router
+  ) {}
+
+  ngOnInit(): void {
+    this.service.getActividades().subscribe(data => {
+      this.actividades = data;
     });
+  }
+
+  volver() {
+    this.router.navigate(['/dashboard']);
   }
 }

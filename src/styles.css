@@ -1,2 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
 @import 'bootstrap/dist/css/bootstrap.min.css';
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+.title {
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.custom-input {
+  font-weight: 400;
+}
+
+.login-btn {
+  font-weight: 500;
+}

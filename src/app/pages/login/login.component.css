@@ -1,0 +1,50 @@
+/* Fondo general */
+.login-wrapper {
+  height: 100vh;
+  background: linear-gradient(135deg, #84c225, #f5c400);
+}
+
+/* Tarjeta */
+.login-card {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 15px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* Logo */
+.logo {
+  width: 120px;
+}
+
+/* Título */
+.title {
+  color: #222;
+  font-weight: bold;
+}
+
+/* Inputs */
+.custom-input {
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+
+.custom-input:focus {
+  border-color: #f5c400;
+  box-shadow: 0 0 5px rgba(245,196,0,0.5);
+}
+
+/* Botón */
+.login-btn {
+  background-color: #f5c400;
+  color: #000;
+  font-weight: bold;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.login-btn:hover {
+  background-color: #e0b000;
+}

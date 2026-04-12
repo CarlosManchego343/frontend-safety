@@ -1,0 +1,98 @@
+.reportes-container {
+  padding: 30px;
+  min-height: 100vh;
+  background: linear-gradient(
+    135deg,
+    rgba(13,71,161,0.9),
+    rgba(30,136,229,0.85),
+    rgba(132,194,37,0.75),
+    rgba(245,196,0,0.6)
+  );
+  color: white;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.header h1 {
+  font-weight: bold;
+}
+
+/* Botón volver */
+.btn-back {
+  background: #00c6ff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-back:hover {
+  background: #0072ff;
+}
+
+/* Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+/* Card */
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  backdrop-filter: blur(10px);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* Estado */
+.estado {
+  display: inline-block;
+  margin: 10px 0;
+  padding: 5px 10px;
+  background: #00c6ff;
+  border-radius: 6px;
+}
+
+/* Riesgos */
+.riesgo-item {
+  margin: 5px 0;
+}
+
+/* Colores por nivel */
+.ALTO {
+  color: #ff4d4d;
+}
+
+.MEDIO {
+  color: #ffc107;
+}
+
+.BAJO {
+  color: #00e676;
+}
+
+/* Incidentes */
+.incidente-item {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+/* Fecha */
+.fecha {
+  font-size: 13px;
+  opacity: 0.7;
+}

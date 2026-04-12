@@ -1,4 +1,41 @@
-<div class="container mt-4">
-  <h2>Reportes</h2>
-  <button class="btn btn-primary" (click)="descargarPDF()">Descargar PDF</button>
+<div class="reportes-container">
+
+  <div class="header">
+    <h1>📊 Reportes SG-SST</h1>
+    <button class="btn-back" (click)="volver()">⬅ Volver</button>
+  </div>
+
+  <div class="grid">
+
+    <div class="card" *ngFor="let act of actividades">
+
+      <h2>{{ act.nombre }}</h2>
+      <p class="desc">{{ act.descripcion }}</p>
+
+      <span class="estado">{{ act.estado }}</span>
+
+      <p class="fecha">📅 {{ act.fecha }}</p>
+
+      <!-- Riesgos -->
+      <div class="riesgos" *ngIf="act.riesgos.length > 0">
+        <h4>⚠️ Riesgos</h4>
+
+        <div *ngFor="let r of act.riesgos" class="riesgo-item">
+          <span [ngClass]="r.nivel">{{ r.descripcion }} ({{ r.nivel }})</span>
+        </div>
+      </div>
+
+      <!-- Incidentes -->
+      <div class="incidentes" *ngIf="act.incidentes.length > 0">
+        <h4>🚨 Incidentes</h4>
+
+        <div *ngFor="let i of act.incidentes" class="incidente-item">
+          {{ i.descripcion }} - {{ i.tipo }}
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
 </div>
