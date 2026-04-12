@@ -1,19 +1,42 @@
-<div class="container mt-4">
-  <h2>Capacitaciones</h2>
-  <table class="table table-bordered">
-    <thead class="table-dark">
-      <tr>
-        <th>ID</th>
-        <th>Nombre</th>
-        <th>Fecha</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let c of capacitaciones">
-        <td>{{ c.id }}</td>
-        <td>{{ c.nombre }}</td>
-        <td>{{ c.fecha }}</td>
-      </tr>
-    </tbody>
-  </table>
+<div class="capacitaciones-container">
+
+  <!-- Header -->
+  <div class="header">
+    <h1>📚 Capacitaciones SG-SST</h1>
+
+    <div class="actions">
+      <button class="btn-back" (click)="volver()">
+        ⬅ Volver al Dashboard
+      </button>
+    </div>
+  </div>
+
+  <!-- Grid -->
+  <div class="grid">
+
+    <div class="card" *ngFor="let c of capacitaciones">
+
+      <h2>{{ c.nombre }}</h2>
+
+      <p class="descripcion">
+        {{ c.descripcion }}
+      </p>
+
+      <span class="estado">
+        Programada
+      </span>
+
+      <div class="fecha">
+        📅 {{ c.fecha | date:'dd/MM/yyyy' }}
+      </div>
+
+    </div>
+
+    <!-- Empty state -->
+    <div *ngIf="capacitaciones.length === 0" class="card empty">
+      ⚠️ No hay capacitaciones registradas
+    </div>
+
+  </div>
+
 </div>

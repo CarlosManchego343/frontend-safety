@@ -96,3 +96,23 @@
   font-size: 13px;
   opacity: 0.7;
 }
+
+.actions {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-pdf {
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  color: white;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-pdf:hover {
+  transform: scale(1.05);
+}

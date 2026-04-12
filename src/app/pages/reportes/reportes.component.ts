@@ -17,7 +17,7 @@ export class ReportesComponent implements OnInit {
   constructor(
     private service: ReportesService,
     private router: Router
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.service.getActividades().subscribe(data => {
@@ -27,5 +27,19 @@ export class ReportesComponent implements OnInit {
 
   volver() {
     this.router.navigate(['/dashboard']);
+  }
+
+  descargarPdf() {
+    this.service.getReportePdf().subscribe(blob => {
+
+      const url = window.URL.createObjectURL(blob);
+      const a = document.createElement('a');
+
+      a.href = url;
+      a.download = 'reporte-sgsst.pdf';
+      a.click();
+
+      window.URL.revokeObjectURL(url);
+    });
   }
 }

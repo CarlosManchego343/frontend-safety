@@ -10,14 +10,13 @@
 
       <!-- RESPONSABLE -->
       <ng-container *ngIf="rol === 'RESPONSABLE'">
-        <a routerLink="/riesgos">⚠️ Monitorear riesgos</a>
-        <a routerLink="/capacitaciones">📚 Capacitaciones</a>
-        <a routerLink="/reportes">📊 Reportes</a>
+        <a routerLink="/capacitaciones">Capacitaciones</a>
+        <a routerLink="/reportes">Monitorear riesgos</a>
       </ng-container>
 
       <!-- TRABAJADOR -->
       <ng-container *ngIf="rol === 'TRABAJADOR'">
-        <a routerLink="/actividades">📝 Registrar actividad</a>
+        <a routerLink="/actividades">Registrar actividad</a>
       </ng-container>
 
     </nav>

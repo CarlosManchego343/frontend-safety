@@ -2,7 +2,16 @@
 
   <div class="header">
     <h1>📊 Reportes SG-SST</h1>
-    <button class="btn-back" (click)="volver()">⬅ Volver</button>
+
+    <div class="actions">
+      <button class="btn-pdf" (click)="descargarPdf()">
+        Generar PDF
+      </button>
+
+      <button class="btn-back" (click)="volver()">
+        ⬅ Volver
+      </button>
+    </div>
   </div>
 
   <div class="grid">

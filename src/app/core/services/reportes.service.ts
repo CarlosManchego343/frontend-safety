@@ -6,19 +6,32 @@ import { Observable } from 'rxjs';
 @Injectable({ providedIn: 'root' })
 export class ReportesService {
 
-  private apiUrl = `${environment.apiUrl}/actividades`;
+  private apiUrl = `${environment.apiUrl}`;
 
   constructor(private http: HttpClient) {}
 
-  getActividades(): Observable<any[]> {
-
+  // 🔹 Reutilizamos headers
+  private getHeaders(): HttpHeaders {
     const data = localStorage.getItem('token');
     const parsed = data ? JSON.parse(data) : null;
 
-    const headers = new HttpHeaders({
+    return new HttpHeaders({
       Authorization: `Bearer ${parsed?.token}`
     });
+  }
 
-    return this.http.get<any[]>(this.apiUrl, { headers });
+  // 📊 Actividades
+  getActividades(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiUrl}/actividades`, {
+      headers: this.getHeaders()
+    });
+  }
+
+  // 📄 PDF
+  getReportePdf(): Observable<Blob> {
+    return this.http.get(`${this.apiUrl}/reportes/pdf`, {
+      headers: this.getHeaders(),
+      responseType: 'blob'
+    });
   }
 }

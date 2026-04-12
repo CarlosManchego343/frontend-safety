@@ -1,0 +1,99 @@
+.capacitaciones-container {
+  padding: 30px;
+  min-height: 100vh;
+  background: linear-gradient(
+    135deg,
+    rgba(13,71,161,0.9),
+    rgba(30,136,229,0.85),
+    rgba(132,194,37,0.75),
+    rgba(245,196,0,0.6)
+  );
+  color: white;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.header h1 {
+  font-weight: bold;
+}
+
+/* Botón volver */
+.btn-back {
+  background: #00c6ff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-back:hover {
+  background: #0072ff;
+  transform: scale(1.05);
+}
+
+/* Actions */
+.actions {
+  display: flex;
+  gap: 10px;
+}
+
+/* Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+/* Card */
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  backdrop-filter: blur(10px);
+  transition: 0.3s;
+  color: #333;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* Descripción */
+.descripcion {
+  font-size: 14px;
+  opacity: 0.8;
+  margin: 10px 0;
+}
+
+/* Estado */
+.estado {
+  display: inline-block;
+  margin: 10px 0;
+  padding: 5px 10px;
+  background: #00c6ff;
+  border-radius: 6px;
+  color: white;
+  font-size: 12px;
+}
+
+/* Fecha */
+.fecha {
+  font-size: 13px;
+  opacity: 0.7;
+  margin-top: 10px;
+}
+
+/* Empty state */
+.empty {
+  text-align: center;
+  font-weight: bold;
+  color: #444;
+}
