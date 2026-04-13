@@ -1,0 +1,38 @@
+<div class="form-container">
+
+  <button class="btn-back" (click)="volver()">
+    ⬅ Volver
+  </button>
+
+  <h2>Crear Actividad SG-SST</h2>
+
+  <input type="text" placeholder="Nombre"
+         [(ngModel)]="actividad.nombre">
+
+  <textarea placeholder="Descripción"
+            [(ngModel)]="actividad.descripcion"></textarea>
+
+  <label>Probabilidad</label>
+  <input type="number" [(ngModel)]="probabilidad" min="1" max="5">
+
+  <label>Impacto</label>
+  <input type="number" [(ngModel)]="impacto" min="1" max="5">
+
+  <button (click)="enviar()" [disabled]="loading">
+    {{ loading ? 'Procesando...' : 'Crear y Evaluar' }}
+  </button>
+
+  <div *ngIf="resultado" class="resultado">
+
+    <h3>Resultado de Evaluación</h3>
+
+    <p><b>Alerta:</b> {{ resultado.alerta }}</p>
+
+    <p><b>Nivel:</b> {{ resultado.evaluacion.nivelCalculado }}</p>
+
+    <p><b>Probabilidad:</b> {{ resultado.evaluacion.probabilidad }}</p>
+    <p><b>Impacto:</b> {{ resultado.evaluacion.impacto }}</p>
+
+  </div>
+
+</div>

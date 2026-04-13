@@ -11,6 +11,8 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { CapacitacionesComponent } from './pages/capacitaciones/capacitaciones.component';
 import { TrabajadoresComponent } from './pages/trabajadores/trabajadores.component';
 import { ReportesComponent } from './pages/reportes/reportes.component';
+import { ActividadesComponent } from './pages/actividades/actividades.component';
+
 
 @NgModule({
   declarations: [
@@ -19,6 +21,7 @@ import { ReportesComponent } from './pages/reportes/reportes.component';
     DashboardComponent,
     CapacitacionesComponent,
     TrabajadoresComponent,
+    ActividadesComponent,
     ReportesComponent
   ],
   imports: [
