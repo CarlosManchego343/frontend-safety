@@ -6,10 +6,12 @@ import { CapacitacionesComponent } from './pages/capacitaciones/capacitaciones.c
 import { TrabajadoresComponent } from './pages/trabajadores/trabajadores.component';
 import { ReportesComponent } from './pages/reportes/reportes.component';
 import { AuthGuard } from './core/guards/auth.guard';
+import { ActividadesComponent } from './pages/actividades/actividades.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent }, 
   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
+  { path: 'actividades', component: ActividadesComponent, canActivate: [AuthGuard] },
   { path: 'capacitaciones', component: CapacitacionesComponent, canActivate: [AuthGuard] },
   { path: 'trabajadores', component: TrabajadoresComponent, canActivate: [AuthGuard] },
   { path: 'reportes', component: ReportesComponent, canActivate: [AuthGuard] },
