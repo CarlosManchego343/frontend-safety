@@ -57,21 +57,21 @@ export class ActividadService {
   // 2️⃣ Evaluar riesgo
   evaluarRiesgo(idActividad: number, probabilidad: number, impacto: number): Observable<any> {
 
-  const url = `${this.evalUrl}/${idActividad}?probabilidad=${probabilidad}&impacto=${impacto}`;
+    const url = `${this.evalUrl}/${idActividad}?probabilidad=${probabilidad}&impacto=${impacto}`;
 
-  return this.http.post(url, {}, {
-    headers: this.getHeaders()
-  });
-}
+    return this.http.post(url, {}, {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    });
+  }
   // 3️⃣ Flujo completo: crear → evaluar
   crearYEvaluar(data: any, probabilidad: number, impacto: number): Observable<any> {
     return this.crearActividad(data).pipe(
       switchMap((actividadCreada: any) => {
 
-        console.log('📌 Actividad creada:', actividadCreada);
-
         return this.evaluarRiesgo(
-          actividadCreada.id,
+          1,
           probabilidad,
           impacto
         );
